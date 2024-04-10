@@ -302,6 +302,17 @@ function _paquetesBase() {
 	
     clear
     
+    _actualizacionSistema
+    _audioBase
+    _live
+    _libreOffice
+    _redes
+    _sistemaArchivos	
+    _utiles
+    _xfce
+    _xorg
+    _lightdm
+    _firefox
     _centroDeSoftware  
     _sistema  
     _devede  
@@ -576,12 +587,71 @@ function _menuAnimacion() {
 # PAQUETES DE QUIRINUX BASE
 # ===========================================================================================
 
+function _actualizacionSistema() {
+
+for paquetes in gnome-packagekit gnome-packagekit-common gnome-package-updater package-update-indicator python3-distro-info python3-pycurl software-properties-gtk unattended-upgrades; do sudo apt install -y $paquetes; done
+	
+}
+
+function _audioBase() {
+
+for paquetes in alsa-utils cheese cuetools clementine dir2ogg ffmpeg ffmpegthumbnailer flac flake gstreamer1.0-plugins-ugly gstreamer1.0-pulseaudio gstreamer1.0-alsa lame mencoder mpeg3-utils mpg123 mpg321 mplayer pavucontrol pavumeter sound-theme-freedesktop vlc vlc-plugin-svg vorbisgain vorbis-tools x264 x265 wav2cdr jq socat mpv pqiv; do sudo apt install -y $paquetes; done
+
+}
+
+function _live() {
+for paquetes in live-boot live-config live-config-sysvinit squashfs-tools; do sudo apt install -y $paquetes; done
+}
+
+function _redes() {
+
+for paquetes in mobile-broadband-provider-info mobile-broadband-provider-info network-manager network-manager-gnome network-manager-openconnect network-manager-openconnect-gnome network-manager-openvpn network-manager-openvpn-gnome network-manager-pptp network-manager-pptp-gnome network-manager-vpnc network-manager-vpnc-gnome network-manager-l2tp network-manager-l2tp-gnome network-manager-ssh network-manager-ssh-gnome network-manager-fortisslvpn network-manager-fortisslvpn-gnome rfkill wavemon wpasupplicant wireless-regdb firmware-ath9k-htc; do sudo apt install -y $paquetes; done
+
+}
+
+function  _xfce() {
+
+for paquetes in fontsnaps task-xfce-desktop thunar-archive-plugin thunar-data thunar-media-tags-plugin thunar-gtkhash thunar-volman xfce4 xfce4-goodies xfce4-whiskermenu-plugin xfce4-power-manager xfce4-power-manager-data xfce4-power-manager-plugins xfce4-datetime-plugin; do sudo apt install -y $paquetes; done  
+
+}
+
+function _utiles() {
+
+for paquetes in acpi-support acpitool apt-transport-https arandr arj cups-bsd cups-pk-helper cpu-x dnsutils dc3dd dialog eject galternatives gnome-system-tools grsync gtkhash gvfs-backends gvfs-fuse gzip hardinfo htop lsof lzip multitail mc mtp-tools ncdu os-prober p7zip packagekit policykit-1 policykit-1-gnome pciutils pinthread printer-driver-cups-pdf pv plank python3-smbc qt5ct sane sane-utils sdparm synapse synaptic system-config-printer system-config-printer-udev sysv-rc-conf tumbler-plugins-extra u3-tool unar unp unrar-free unzip usbutils urfkill vokoscreen-ng vrms weather-util weather-util-data xsane xdg-user-dirs-gtk xscreensaver xscreensaver-data-extra xscreensaver-gl xscreensaver-gl-extra xscreensaver-screensaver-bsod xz-utils zenity zip zsync unace sharutils uudeview mpack cabextract lunzip libusb-0.1-4 libx86-1 wireless-tools powermgmt-base pm-utils laptop-mode-tools iw vbetool ethtool zst zstd zarchive-tools
+
+}
+
+function _xorg() {
+
+for paquetes in i965-va-driver xauth xinit xinput xkb-data xorg xserver-xephyr xserver-xorg xserver-xorg-core xserver-xorg-input-all xserver-xorg-input-libinput xserver-xorg-input-mutouch xserver-xorg-input-multitouch xserver-xorg-input-synaptics xserver-xorg-input-wacom xserver-xorg-input-kbd xserver-xorg-legacy xserver-xorg-video-all xserver-xorg-video-amdgpu xserver-xorg-video-ati xserver-xorg-video-fbdev xserver-xorg-video-intel xserver-xorg-video-nouveau xserver-xorg-video-qxl xserver-xorg-video-radeon xserver-xorg-video-vesa; do sudo apt install -y $paquetes; done
+
+}
+
+function _sistemaArchivos() {
+
+for paquetes in btrbk btrfs-compsize btrfs-heatmap btrfs-progs btrfsmaintenance dosfstools dmraid exfatprogs exfat-fuse f2fs-tools fatresize fatsort hfsutils hfsplus lvm2 mdadm nilfs-tools nfs-common ntfs-3g jfsutils reiserfsprogs reiser4progs sshfs xfsdump xfsprogs udisks2-btrfs udfclient udftools; do sudo apt install -y $paquetes; done; do sudo apt install -y $paquetes; done
+
+}
+
+function _libreOffice() {
+
+for paquetes in libreoffice libreoffice-calc libreoffice-impress libreoffice-writer libreoffice-style-colibre libreoffice-style-colibre; do sudo apt install -y $paquetes; done
+
+}
+
+function _lightdm() {
+
+for paquetes in lightdm-gtk-greeter lightdm-gtk-greeter-settings libpolkit-gobject-elogind-1-0 lightdm liblightdm-gobject-1-0; do sudo apt install -y $paquetes; done
+
+}
+
 function _centroDeSoftware() {
 
     # Centro de Software
     for paquetes in mintinstall flatpak flatpakconfig; do sudo apt install -y $paquetes; done
 
 }
+
 function _sistema() {
     # Utilidades de sistema (limpieza, seguridad y backup)
     for paquetes in color-picker stacer bleachbit gparted flatpakconfig gufw baobab catfish quirinux-bluconfig timeshift; do sudo apt install -y $paquetes; done
@@ -620,6 +690,12 @@ function _audacity() {
 	
 	for paquetes in audacity; do sudo apt install -y $paquetes; done
 	
+}
+
+function _firefox() {
+
+for paquetes in firefox-esr firefox-esr-l10n-es-es firefox-esr-l10n-fr firefox-esr-l10n-pt-pt firefox-esr-l10n-it firefox-esr-l10n-de firefox-esr-l10n-fr firefox-esr firefox-esr-l10n-de firefox-esr-l10n-es-es firefox-esr-l10n-fr firefox-esr-l10n-gl firefox-esr-l10n-ru firefox-esr-l10n-it; do sudo apt install -y $paquetes; done
+
 }
 
 function _virtualbox() {
@@ -827,7 +903,7 @@ function _librerias() {
     
     for paquetes in mmolch-thumbnailers xapp-appimage-thumbnailer xapp-epub-thumbnailer xapp-mp3-thumbnailer xapp-raw-thumbnailer xapp-thumbnailers-common xapp-vorbiscomment-thumbnailer; do sudo apt install -y $paquetes; done
     
-    for paquetes in ntp hunspell-es hunspell-en-us hunspell-gl hunspell-it hunspell-pt-pt hunspell-pt-br hunspell-de-de-frami xserver-xorg-input-mutouch xserver-xorg-input-multitouch btrfs-progs dosfstools dmraid exfat-fuse f2fs-tools fatresize fatsort hfsutils hfsplus lvm2 nilfs-tools nfs-common ntfs-3g jfsutils reiserfsprogs reiser4progs dosfstools dmraid exfat-fuse f2fs-tools fatresize fatsort hfsutils hfsplus lvm2 nilfs-tools nfs-common ntfs-3g jfsutils reiserfsprogs reiser4progs sshfs xfsdump xfsprogs udfclient udftools package-update-indicator gnome-packagekit python3-distro-info python3-pycurl unattended-upgrades libreoffice-l10n-de libreoffice-l10n-es libreoffice-l10n-gl libreoffice-l10n-it libreoffice-l10n-pt libreoffice-l10n-fr firefox-esr-l10n-es-es firefox-esr-l10n-fr firefox-esr-l10n-pt-pt firefox-esr-l10n-it firefox-esr-l10n-de firefox-esr-l10n-fr frei0r-plugins graphicsmagick mediainfo-gui firefox-esr firefox-esr-l10n-de firefox-esr-l10n-es-es firefox-esr-l10n-fr firefox-esr-l10n-gl firefox-esr-l10n-ru firefox-esr-l10n-it gvfs-backends connman conky conky-all libimobiledevice-utils default-jre tumbler tumbler-plugins-extra ffmpegthumbnailer usermode build-essential make automake cmake xinput-calibrator libsox-fmt-mp3 gvfs-fuse libsmbclient python3-gphoto2cffi libgphoto2-dev dcraw python3-gphoto2cffi python3-gphoto2 gphotofs python3-smbc liblensfun-bin pacpl imagemagick x264 gnome-system-tools unrar-free zip unzip unace bzip2 lzop p7zip p7zip-full gzip lzip zip abr2gbr gtkam-gimp gphoto2 qapt-deb-installer ifuse; do sudo apt install -y $paquetes; done
+    for paquetes in ntp hunspell-es hunspell-en-us hunspell-gl hunspell-it hunspell-pt-pt hunspell-pt-br hunspell-de-de-frami xserver-xorg-input-mutouch xserver-xorg-input-multitouch btrfs-progs dosfstools dmraid exfat-fuse f2fs-tools fatresize fatsort hfsutils hfsplus lvm2 nilfs-tools nfs-common ntfs-3g jfsutils reiserfsprogs reiser4progs dosfstools dmraid exfat-fuse f2fs-tools fatresize fatsort hfsutils hfsplus lvm2 nilfs-tools nfs-common ntfs-3g jfsutils reiserfsprogs reiser4progs sshfs xfsdump xfsprogs udfclient udftools package-update-indicator gnome-packagekit python3-distro-info python3-pycurl unattended-upgrades libreoffice-l10n-de libreoffice-l10n-es libreoffice-l10n-gl libreoffice-l10n-it libreoffice-l10n-pt libreoffice-l10n-fr  frei0r-plugins graphicsmagick mediainfo-gui  gvfs-backends connman conky conky-all libimobiledevice-utils default-jre tumbler tumbler-plugins-extra ffmpegthumbnailer usermode build-essential make automake cmake xinput-calibrator libsox-fmt-mp3 gvfs-fuse libsmbclient python3-gphoto2cffi libgphoto2-dev dcraw python3-gphoto2cffi python3-gphoto2 gphotofs python3-smbc liblensfun-bin pacpl imagemagick x264 gnome-system-tools unrar-free zip unzip unace bzip2 lzop p7zip p7zip-full gzip lzip zip abr2gbr gtkam-gimp gphoto2 qapt-deb-installer ifuse; do sudo apt install -y $paquetes; done
 
 }
 
