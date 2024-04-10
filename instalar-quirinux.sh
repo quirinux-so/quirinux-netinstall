@@ -626,13 +626,13 @@ function _virtualbox() {
 
     # Virtualbox + Paquete de extensiones
     for paquetes in virtualbox-7.0 linux-headers-$(uname -r); do sudo apt install -y $paquetes; done
-    sudo mkdir -p /opt/tmp/virtualbox
-    sudo wget --no-check-certificate 'https://download.virtualbox.org/virtualbox/7.0.10/Oracle_VM_VirtualBox_Extension_Pack-7.0.10.vbox-extpack' -O /opt/tmp/virtualbox/Oracle_VM_VirtualBox_Extension_Pack-7.0.10.vbox-extpack
-    cd /opt/tmp/virtualbox/
-    sudo VBoxManage extpack install Oracle_VM_VirtualBox_Extension_Pack-7.0.10.vbox-extpack
-    sudo rm /opt/tmp/virtualbox/Oracle_VM_VirtualBox_Extension_Pack-7.0.10.vbox-extpack
+   # sudo mkdir -p /opt/tmp/virtualbox
+   # sudo wget --no-check-certificate 'https://download.virtualbox.org/virtualbox/7.0.10/Oracle_VM_VirtualBox_Extension_Pack-7.0.10.vbox-extpack' -O /opt/tmp/virtualbox/Oracle_VM_VirtualBox_Extension_Pack-7.0.10.vbox-extpack
+   # cd /opt/tmp/virtualbox/
+   # sudo VBoxManage extpack install Oracle_VM_VirtualBox_Extension_Pack-7.0.10.vbox-extpack
+   # sudo rm /opt/tmp/virtualbox/Oracle_VM_VirtualBox_Extension_Pack-7.0.10.vbox-extpack
     for paquetes in quirinux-virtualbox; do sudo apt install -y $paquetes; done
-    sudo rcvboxadd setup
+   # sudo rcvboxadd setup
 
 }
 
