@@ -370,7 +370,7 @@ function _paquetesAnimacion() {
     _darktable
     _rawtherapee
     _krita
-    _manuskript
+    _kitscenarist
     _sweethome3d
     _huayra
     _tahoma2D
@@ -521,7 +521,7 @@ function _menuAnimacion() {
         16 "Huayra Stopmotion: App Sencilla de Stop-motion Webcam en 4:3" off
         17 "Inkscape: Dibujo Vectorial" off
         18 "Krita: Dibujo, Pintura y Animación 2D, Modos RGB y CMYK" off
-        19 "Manuskript: Software para Escritores y Guionistas" off
+        19 "Kitscenarist: Software para Guionistas" off
         20 "MyPaint: Pintura Digital Similar a ArtRage" off
         21 "Natron: Composición y Efectos por Nodos, Similar a Nuke" off
         22 "Pencil 2D: Animación 2D Estilo Flash 8" off
@@ -562,7 +562,7 @@ function _menuAnimacion() {
         16) _huayra ;;
         17) _inkscape ;;
         18) _krita ;;
-        19) _manuskript ;;
+        19) _kitscenarist ;;
         20) _mypaint ;;
         21) _natron ;;
         22) _pencil ;;
@@ -1056,10 +1056,10 @@ function _krita() {
 
 }
 
-function _manuskript() {
+function _kitscenarist() {
 
     # Manuskript: software para escritores y guionistas
-    for paquetes in manuskript; do sudo apt install -y $paquetes; done
+    for paquetes in kitscenarist; do sudo apt install -y $paquetes; done
 
 }
 
